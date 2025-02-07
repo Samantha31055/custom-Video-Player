@@ -1,18 +1,18 @@
 // Selectors
-const video = document.getElementById("video");
-const play = document.getElementById("play");
-const stop = document.getElementById("stop");
-const progress = document.getElementById("progress");
-const timestamp = document.getElementById("timestamp");
+const video = document.getElementById('video');
+const play = document.getElementById('play');
+const stop = document.getElementById('stop');
+const progress = document.getElementById('progress');
+const timestamp = document.getElementById('timestamp');
 
 // Event Listeners
-video.addEventListener("click", toggleVideoStatus);
-video.addEventListener("pause", updatePlayIcon);
-video.addEventListener("play", updatePlayIcon);
+video.addEventListener('click', toggleVideoStatus);
+video.addEventListener('pause', updatePlayIcon);
+video.addEventListener('play', updatePlayIcon);
 video.addEventListener("timeupdate", updateProgress);
 
-play.addEventListener("click", toggleVideoStatus);
-stop.addEventListener("click", stopVideo);
+play.addEventListener('click', toggleVideoStatus);
+stop.addEventListener('click', stopVideo);
 progress.addEventListener('change', setVideoProgress);
 
 // Handlers
@@ -51,7 +51,7 @@ let minutes = Math.floor(video.currentTime / 60);
 
 // Prefix with a zero (0) if the minutes are single digit values
 if (minutes < 10) {
-  minutes = "0" + String(minutes);
+  minutes = '0' + String(minutes);
 }
 
 // Compute the seconds
@@ -59,7 +59,7 @@ let seconds = Math.floor(video.currentTime % 60);
 
 // Prefix with a zero (0) if the seconds are single digit values
 if (seconds < 10) {
-  seconds = "0" + String(seconds);
+  seconds = '0' + String(seconds);
 }
 
 timestamp.innerHTML = `${minutes}:${seconds}`;
